@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async, Await</title>
+</head>
+<style>
+    .button{
+        background-color: rgb(134, 144, 189);
+        padding: 10px;
+        margin: 10px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 6px;
+        gap: 10px;
+    }
+    
+</style>
+<body>
+    <h1>This tutorial about async and await using setTimeout and setInterval</h1>
+    <p>Is your wish to start or stop the execution.<br>
+    Here we declare two buttons start and stop using id and get by their ID</p>
+
+     <span><button class="button" id="start">Start</button></span>
+     <span><button class="button" id="stop">Stop</button></span>
+</body>
+<script>
+    console.log("lets try start and stop button.")
+
+    document.querySelector("#start").addEventListener("click",function(){
+        const start = function(){
+            console.log("Ram");
+        };
+        const toStop = setInterval(start, 2000,(click=start));
+        document.querySelector("#stop").addEventListener("click",function(){
+        clearInterval(toStop);
+    });
+    });
+    
+</script>
+</html>
